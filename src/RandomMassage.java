@@ -12,9 +12,9 @@ public class RandomMassage {
     static void tooHigh() {
         Random randomNumber = new Random();
         int randomMassageNumber = randomNumber.nextInt(5);
-        String[] tooLow = {"Too High.", "You need a smaller number", "If I was you I would pick a smaller number",
+        String[] tooHigh = {"Too High.", "You need a smaller number", "If I was you I would pick a smaller number",
                 "Number you pick is too damn high", "Go smaller or go home"};
-        System.out.println(tooLow[randomMassageNumber]);
+        System.out.println(tooHigh[randomMassageNumber]);
     }
 
 
