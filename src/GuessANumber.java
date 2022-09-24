@@ -32,6 +32,7 @@ public class GuessANumber {
         System.out.println("Good Job!");
         System.out.printf("Now you need to guess a number between 1 an %d.%n", (n - 1));
         int computerNumber = randomNumber.nextInt(n);
+        int countWins  = 0;
         while (true) {
             System.out.printf("Guess a number (0-%d): ", n - 1);
             String playerInput = scanner.nextLine();
@@ -48,7 +49,16 @@ public class GuessANumber {
                 playerNumber = Integer.parseInt(playerInput);
                 if (playerNumber == computerNumber) {
                     System.out.println("You guessed it!");
-                    break;
+                    countWins++;
+                    System.out.printf("You have guessed %d times.%n",countWins);
+                    System.out.println("Do you want to continue: write [y]es");
+                    String continueGame = scanner.nextLine();
+                    if (continueGame.equals("y")){
+                        computerNumber = randomNumber.nextInt(n);
+                    }else {
+                        break;
+
+                    }
                 } else if (playerNumber > computerNumber) {
                     RandomMassage.tooHigh();
                 } else {
